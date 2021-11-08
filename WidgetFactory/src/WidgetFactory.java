@@ -1,3 +1,8 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+
 public class WidgetFactory {
 
     /*
@@ -28,4 +33,41 @@ public class WidgetFactory {
      Profit: $760.00
 
      */
+
+    //my stuff added below
+    public static JFrame window = new JFrame ("Widget Factory");
+    public static JPanel panel = new JPanel();
+    public static JLabel Label1 = new JLabel("How many widgets to you want made?");
+    public static JTextField numWid = new JTextField(3);
+    public static JButton button = new JButton("Calculate");
+    public static JLabel calculation = new JLabel();
+
+    public static void main(String[] args) {
+
+        window.add(panel);
+        window.setSize(350,350);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
+
+        panel.add(Label1);
+        panel.add(numWid);
+        panel.add(button);
+        panel.add(button);
+
+        button.addActionListener(new button());
+    }
+    private static class button implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent actionevent){
+            int wid = Integer.parseInt(numWid.getText());
+
+            calculation.setText(wid)
+
+
+
+
+        }
+
+    }
 }
