@@ -21,9 +21,9 @@ public class RPGCharacterGUI {
 
     //Labels for new stats
 
-    double dex = Double.parseDouble(inputField2.getText());
-    double sprt = Double.parseDouble(inputField3.getText());
-    double strength = Double.parseDouble(inputField4.getText());
+    double dex;
+    double sprt;
+    double strength;
 
     public RPGCharacterGUI() {
 
@@ -53,6 +53,9 @@ public class RPGCharacterGUI {
     private class Reckon implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent actionevent){
+            dex = Double.parseDouble(inputField2.getText());
+            sprt = Double.parseDouble(inputField3.getText());
+            strength = Double.parseDouble(inputField4.getText());
 
             JLabel stats = new JLabel();
             JLabel damage = new JLabel();
